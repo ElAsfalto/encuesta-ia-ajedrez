@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta sobre la IA</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <link rel="stylesheet"
+    href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+</head>
+
+<body>
+
+<div class="formulario">
+
+    <h2>Encuesta sobre la IA</h2>
+
+    <form id="encuesta">
+
+        <p>Nombre o código del participante:</p>
+        <input type="text" id="nombre" required
+        placeholder="Ejemplo: Participante 1">
+
+        <p>I. ¿Cuántas horas al día utilizas la IA?</p>
+
+        <label>
+            <input type="radio" name="horas" value="Menos de 1 hora" required>
+            Menos de 1 hora
+        </label>
+
+        <label>
+            <input type="radio" name="horas" value="1 a 2 horas">
+            De 1 a 2 horas
+        </label>
+
+        <label>
+            <input type="radio" name="horas" value="3 a 4 horas">
+            De 3 a 4 horas
+        </label>
+
+        <label>
+            <input type="radio" name="horas" value="5 horas o más">
+            5 horas o más
+        </label>
+
+        <p>II. Si no hubiera IA, ¿podrías hacer tus tareas fácilmente?</p>
+        <textarea id="respuesta1" required
+        placeholder="Escribe tu respuesta..."></textarea>
+
+        <p>III. ¿Para qué sueles usar la IA?</p>
+        <textarea id="respuesta2" required
+        placeholder="Escribe tu respuesta..."></textarea>
+
+        <p>IV. ¿Te sirve la información que te brinda?</p>
+        <textarea id="respuesta3" required
+        placeholder="Escribe tu respuesta..."></textarea>
+
+        <hr>
+
+        <h3>V. Resuelve los puzles de ajedrez</h3>
+
+        <p>Puzle 1: juega con las negras contra Stockfish.</p>
+        <div id="tablero-facil" class="tablero"></div>
+
+        <p>Explica tu razonamiento:</p>
+        <textarea id="razonamiento-1"
+        placeholder="¿Por qué elegiste esa jugada?"></textarea>
+
+        <p>Puzle 2: juega con las blancas contra Stockfish.</p>
+        <div id="tablero-dificil" class="tablero"></div>
+
+        <p>Explica tu razonamiento:</p>
+        <textarea id="razonamiento-2"
+        placeholder="¿Por qué elegiste esa jugada?"></textarea>
+
+        <p id="resultado"></p>
+
+        <button type="submit" id="enviar">Enviar respuestas</button>
+
+    </form>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+
+<script src="ajedrez.js"></script>
+
+<script src="envio.js"></script>
+
+</body>
+</html>
